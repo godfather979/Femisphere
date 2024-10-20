@@ -5,6 +5,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors:{
+        feecba: '#feecba',
+        ffbb00: '#ffbb00',
+
+      },
       fontFamily: {
         blackjack: ["Blackjack", "cursive"],
       },
