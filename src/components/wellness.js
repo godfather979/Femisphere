@@ -9,7 +9,7 @@ function WellnessDashboard() {
             {/* Top Navigation */}
             <div className="flex justify-between items-center py-4 mb-8">
                 <div className="flex items-center">
-                    <div className="text-3xl font-semibold text-white">Welllife</div>
+                    <div className="text-3xl font-semibold text-white">FEMISPHERE</div>
                 </div>
                 <div className="flex items-center space-x-6">
                     <input type="text" placeholder="Search" className="px-4 py-2 rounded-lg text-black" />

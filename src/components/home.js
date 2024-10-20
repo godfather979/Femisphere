@@ -1,48 +1,83 @@
-import { motion } from 'framer-motion';
-import React from 'react';
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import React, { useEffect } from 'react';
+import myGif from '../images/0001-0240-unscreen.gif';
+import femishepere from '../images/FEMISPHERE.png'; // Import your image here
 
 const Home = () => {
+    // Stat animations
+    const countWomenReached = useMotionValue(0);
+    const countWomenServed = useMotionValue(0);
+    const countSupportTraining = useMotionValue(0);
+
+    const roundedWomenReached = useTransform(countWomenReached, latest => Math.round(latest));
+    const roundedWomenServed = useTransform(countWomenServed, latest => Math.round(latest));
+    const roundedSupportTraining = useTransform(countSupportTraining, latest => Math.round(latest));
+
+    useEffect(() => {
+        const controls1 = animate(countWomenReached, 579287, { duration: 2 });
+        const controls2 = animate(countWomenServed, 39635, { duration: 2 });
+        const controls3 = animate(countSupportTraining, 35, { duration: 2 });
+
+        return () => {
+            controls1.stop();
+            controls2.stop();
+            controls3.stop();
+        };
+    }, []);
+
     return (
         <>
             {/* Main Container */}
-            <div className="min-h-screen bg-gray-900 flex flex-col justify-center items-center p-8">
-                
+            <div className="min-h-screen bg-gray-900 flex flex-col justify-center items-center p-8 mb-1">
+                <img src={myGif} alt="Description of GIF" />
+
                 {/* Video Section */}
                 <motion.div
-                    className="w-full md:w-3/5 h-80 rounded-lg mb-8 overflow-hidden" // Added overflow-hidden for rounded corners
+                    className="w-full md:w-3/5 h-500 rounded-lg mb-100 overflow-hidden "
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.5 }}
                 >
-                    <video 
-                        className="w-full h-full object-cover" 
-                        autoPlay 
-                        loop 
-                        muted
-                    >
-                        <source src="https://www.example.com/your-video.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
+                    {/* Video Content Here */}
                 </motion.div>
 
-                {/* Header Section with Hover Animation */}
+                {/* Header Section with Hover Animation and Gradient Text */}
                 <motion.div
-                    className="text-6xl font-bold text-white mb-12"
-                    initial={{ opacity: 0, y: -50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
+                    className="text-6xl font-bold mb-5 "
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                     whileHover={{ scale: 1.05, color: "#ffffff" }}
+                    style={{
+                        background: "linear-gradient(to right, #FFD700, #FFEA00)", // Bright yellow to gold
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                    }}
                 >
                     EMPOWERING WOMEN THROUGH WELLNESS
                 </motion.div>
 
-                {/* Image Section with a New Background */}
+                {/* Second Image Section (FEMISHEPERE.png) */}
                 <motion.div
-                    className="w-full md:w-3/5 h-80 rounded-lg shadow-lg mb-8"
-                    style={{ 
-                        backgroundImage: "url('https://via.placeholder.com/800')", // Test with placeholder
-                        backgroundColor: '#2d3748', // Greyish background color
-                        backgroundSize: 'cover', // Ensures image covers the div
+                    className="w-full md:w-3/5 h-80 rounded-lg shadow-lg mb-8 mt-5"
+                    style={{
+                        backgroundImage: `url(${femishepere})`, // Use the imported image
+                        backgroundColor: '#2d3748',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1.5 }}
+                />
+
+                {/* Image Section with the Updated Background */}
+                <motion.div
+                    className="w-full md:w-3/5 h-80 rounded-lg shadow-lg mb-8 mt-5"
+                    style={{
+                        backgroundImage: "url('https://media.istockphoto.com/id/1349960155/photo/group-of-fashionable-women-standing-in-a-studio.jpg?s=612x612&w=0&k=20&c=yvz6WEdYTCwkFFu_B2BgceE4dlKZ0hbB3dcngOUv6kw=')", // Updated image URL
+                        backgroundColor: '#2d3748',
+                        backgroundSize: 'cover',
                         backgroundPosition: 'center'
                     }}
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -73,8 +108,10 @@ const Home = () => {
                         transition={{ duration: 1.2 }}
                         whileHover={{ scale: 1.1 }}
                     >
-                        <p className="text-4xl font-bold text-green-400">579,287</p>
-                        <p className="text-lg text-white">Women reached in 17 countries</p>
+                        <p className="text-4xl font-bold text-green-400">
+                            <motion.span>{roundedWomenReached}</motion.span>
+                        </p>
+                        <p className="text-lg text-white">Women connected in 17 countries</p>
                     </motion.div>
 
                     {/* Stat Card 2 */}
@@ -85,8 +122,10 @@ const Home = () => {
                         transition={{ duration: 1.2 }}
                         whileHover={{ scale: 1.1 }}
                     >
-                        <p className="text-4xl font-bold text-green-400">39,635</p>
-                        <p className="text-lg text-white">Women served in 2023</p>
+                        <p className="text-4xl font-bold text-green-400">
+                            <motion.span>{roundedWomenServed}</motion.span>
+                        </p>
+                        <p className="text-lg text-white">Women accessed site in 2023</p>
                     </motion.div>
 
                     {/* Stat Card 3 */}
@@ -97,8 +136,10 @@ const Home = () => {
                         transition={{ duration: 1.2 }}
                         whileHover={{ scale: 1.1 }}
                     >
-                        <p className="text-4xl font-bold text-green-400">$35</p>
-                        <p className="text-lg text-white">Supports training and stipends</p>
+                        <p className="text-4xl font-bold text-green-400">
+                            <motion.span>{roundedSupportTraining}</motion.span>
+                        </p>
+                        <p className="text-lg text-white">Startups supported - training and stipends</p>
                     </motion.div>
                 </motion.div>
 
@@ -108,3 +149,6 @@ const Home = () => {
 }
 
 export default Home;
+
+
+

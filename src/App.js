@@ -8,6 +8,7 @@ import Tracking from './components/Tracking';
 import Navbar from './components/Navbar';
 import Legal from './components/Legal';
 import Home from './components/home';
+import Loginp from './components/loginp';
 
 import Ria from './components/Ria'
 
@@ -24,27 +25,29 @@ function App() {
   );
 }
 
+
 const RoutesWeb = () => {
   const location = useLocation(); // Get the current route
 
-  return (
-      <>
-      {/* {loading && <Loader />} */}
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Hello />} />
-        <Route path="/bye" element={<Bye />} />
-        <Route path="/wellness" element={<WellnessCard/>} />
-        <Route path="/job" element={<Job/>} />
-        <Route path="/tracking" element={<Tracking/>} />
-        <Route path="/legal" element={<Legal />} />
-        <Route path="/nav" element={<Navbar/>} />
-        <Route path="/home" element={<Home/>} />
-        <Route path="/Ria" element={<Ria/>} />
+  // Check if the current path is '/log'
+  const hideNavbar = location.pathname === "/log"; 
 
+  return (
+    <>
+      {/* Render Navbar only if the route is not '/log' */}
+      {!hideNavbar && <Navbar />}
+      
+      <Routes>
+        <Route path="/wellness" element={<WellnessCard />} />
+        <Route path="/job" element={<Job />} />
+        <Route path="/tracking" element={<Tracking />} />
+        <Route path="/legal" element={<Legal />} />
+        <Route path="/nav" element={<Navbar />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/Ria" element={<Ria />} />
+        <Route path="/" element={<Loginp />} />
       </Routes>
-      {/* {!isAdminRoute && <Footer />}       Conditionally render Footer */}
-      </>
+    </>
   );
 };
 

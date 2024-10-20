@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
+import legalImage from '../images/legal.jpg'; // Update import statement for the image
 
 function Legal() {
     return (
@@ -20,7 +21,7 @@ function Legal() {
                 <motion.div
                     className="w-full md:w-3/5 h-96 rounded-lg shadow-lg py-10 mb-8 relative overflow-hidden mt-8"
                     style={{
-                        backgroundImage: "url('/path-to-your-image.jpg')",
+                        backgroundImage: `url(${legalImage})`, // Use the imported image here
                         backgroundPosition: 'center',
                         backgroundSize: 'cover',
                         backgroundBlendMode: 'overlay',
@@ -101,9 +102,9 @@ function Legal() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h3 className="text-xl font-semibold text-yellow-300 mb-2">Lawyer 1</h3>
+                        <h3 className="text-xl font-semibold text-yellow-300 mb-2">Lawyer - Anshika Chokhani</h3>
                         <p>Specialist in women's rights and criminal law with 10+ years of experience.</p>
-                        <button className="mt-4 p-2 bg-yellow-400 text-gray-900 rounded-lg">Contact</button>
+                        <button className="mt-4 p-2 bg-yellow-400 text-gray-900 rounded-lg">Contact: +91 9821022778</button>
                     </motion.div>
 
                     {/* Card 2 */}
@@ -113,9 +114,9 @@ function Legal() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.0 }}
                     >
-                        <h3 className="text-xl font-semibold text-yellow-300 mb-2">Lawyer 2</h3>
+                        <h3 className="text-xl font-semibold text-yellow-300 mb-2">Lawyer - Firdaus Naqvi</h3>
                         <p>Expert in sexual harassment cases with a focus on workplace equality.</p>
-                        <button className="mt-4 p-2 bg-yellow-400 text-gray-900 rounded-lg">Contact</button>
+                        <button className="mt-4 p-2 bg-yellow-400 text-gray-900 rounded-lg">Contact: +91 8850277951</button>
                     </motion.div>
 
                     {/* Card 3 */}
@@ -125,9 +126,9 @@ function Legal() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.2 }}
                     >
-                        <h3 className="text-xl font-semibold text-yellow-300 mb-2">Lawyer 3</h3>
+                        <h3 className="text-xl font-semibold text-yellow-300 mb-2">Lawyer - Noor Zaid </h3>
                         <p>Leading advocate in domestic violence cases and family law disputes.</p>
-                        <button className="mt-4 p-2 bg-yellow-400 text-gray-900 rounded-lg">Contact</button>
+                        <button className="mt-4 p-2 bg-yellow-400 text-gray-900 rounded-lg">Contact: +91 9821338156</button>
                     </motion.div>
                 </div>
             </div>
@@ -136,3 +137,5 @@ function Legal() {
 }
 
 export default Legal;
+
+
