@@ -7,6 +7,7 @@ import Job from './components/Job';
 import Tracking from './components/Tracking';
 import Navbar from './components/Navbar';
 import Legal from './components/Legal';
+import Home from './components/home';
 
 import Ria from './components/Ria'
 
@@ -38,6 +39,7 @@ const RoutesWeb = () => {
         <Route path="/tracking" element={<Tracking/>} />
         <Route path="/legal" element={<Legal />} />
         <Route path="/nav" element={<Navbar/>} />
+        <Route path="/home" element={<Home/>} />
         <Route path="/Ria" element={<Ria/>} />
 
       </Routes>

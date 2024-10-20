@@ -4,6 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaHeartbeat } from "react-icons/fa";
 import { GoLaw } from "react-icons/go";
 import { PiSuitcaseSimple } from "react-icons/pi";
+import { IoHomeOutline } from "react-icons/io5";
 
 
 
@@ -25,6 +26,13 @@ const Navbar = () => {
       href: "/wellness",
     },
     {
+      title: "Home",
+      icon: (
+        <IoHomeOutline className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/home",
+    },
+    {
       title: "Job Oppurtunities",
       icon: (
         <PiSuitcaseSimple className="h-full w-full text-neutral-500 dark:text-neutral-300" />
@@ -38,6 +46,7 @@ const Navbar = () => {
       ),
       href: "/legal",
     },
+   
   
   ];
   return (

@@ -19,7 +19,6 @@ function Ria() {
     title.style.fontFamily = 'Chillax';
     title.style.fontWeight = '400';
     title.style.lineHeight = '30px';
-    title.style.wordWrap = 'break-word';
     title.textContent = 'Calories';
     container.appendChild(title);
   
@@ -43,7 +42,6 @@ function Ria() {
       label.style.fontFamily = 'Chillax';
       label.style.fontWeight = '400';
       label.style.lineHeight = '21px';
-      label.style.wordWrap = 'break-word';
       label.textContent = value;
       labels.appendChild(label);
     });
@@ -60,6 +58,7 @@ function Ria() {
     barsContainer.style.display = 'flex';
     barsContainer.style.justifyContent = 'space-between';
     barsContainer.style.alignItems = 'flex-end';
+    barsContainer.style.gap = '3px'; // Space between bars
   
     // Create a dotted line for the bar chart
     const dottedLine = document.createElement('div');
@@ -85,13 +84,12 @@ function Ria() {
     ];
   
     // Loop through the bar data and create bars
-    barData.forEach(bar => {
+    barData.forEach((bar, index) => {
       const barContainer = document.createElement('div');
       barContainer.style.display = 'flex';
       barContainer.style.flexDirection = 'column';
       barContainer.style.alignItems = 'center';
-      barContainer.style.gap = '3px'; // 3px space between the bar and month label
-  
+      
       const barDiv = document.createElement('div');
       barDiv.style.width = '32px';
       barDiv.style.height = `${bar.height}px`;
@@ -104,7 +102,6 @@ function Ria() {
       monthLabel.style.fontFamily = 'Chillax';
       monthLabel.style.fontWeight = bar.month === 'Oct' ? '600' : '400';
       monthLabel.style.lineHeight = '24px';
-      monthLabel.style.wordWrap = 'break-word';
       monthLabel.textContent = bar.month;
   
       barContainer.appendChild(barDiv);
@@ -134,8 +131,6 @@ function Ria() {
     monthText.style.fontSize = '16px';
     monthText.style.fontFamily = 'Chillax';
     monthText.style.fontWeight = '400';
-    monthText.style.lineHeight = '24px';
-    monthText.style.wordWrap = 'break-word';
     monthText.textContent = 'Month';
   
     const toggleIcon = document.createElement('div');
@@ -163,6 +158,8 @@ function Ria() {
     // Append the container to the body or any other parent element
     document.body.appendChild(container);
   }
+  
+  
   
  
   
