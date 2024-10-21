@@ -30,7 +30,7 @@ const Login = () => {
         Login to Femishphere. Join us to empower Women
       </p>
 
-      <form className="mt-8 mb-4" onSubmit={handleSubmit}>
+      <form className="mt-6 mb-4" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
             <Label htmlFor="firstname">First name</Label>
@@ -49,7 +49,7 @@ const Login = () => {
           <Label htmlFor="password">Password</Label>
           <Input id="password" placeholder="••••••••" type="password" />
         </LabelInputContainer>
-        <LabelInputContainer className="mb-8">
+        <LabelInputContainer className="mb-6">
           <Label htmlFor="twitterpassword">Your twitter password</Label>
           <Input
             id="twitterpassword"
@@ -67,7 +67,7 @@ const Login = () => {
           <BottomGradient />
         </button>
 
-        <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
+        <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-6 h-[1px] w-full" />
 
         <div className="flex flex-col space-y-4">
           <button

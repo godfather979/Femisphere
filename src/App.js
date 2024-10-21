@@ -10,6 +10,7 @@ import Home from './components/home';
 import Loginp from './components/loginp';
 import ScrollToTop from './components/ScrollToTop';
 import Job1 from './components/Job1';
+import Glober from './components/Glober';
 
 import Ria from './components/Ria'
 
@@ -48,6 +49,7 @@ const RoutesWeb = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/Ria" element={<Ria />} />
         <Route path="/" element={<Loginp />} />
+        <Route path="/test" element={<Glober />} />
       </Routes>
     </>
   );
