@@ -9,8 +9,9 @@ function Loginp() {
     return (
         <>
             <div className = "bg-neutral-900">
-            <Login />
             <BackgroundBeams />
+            <Login />
+            
             </div>
         </>
         

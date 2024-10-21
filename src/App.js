@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Legal from './components/Legal';
 import Home from './components/home';
 import Loginp from './components/loginp';
+import ScrollToTop from './components/ScrollToTop';
 
 import Ria from './components/Ria'
 
@@ -30,10 +31,11 @@ const RoutesWeb = () => {
   const location = useLocation(); // Get the current route
 
   // Check if the current path is '/log'
-  const hideNavbar = location.pathname === "/log"; 
+  const hideNavbar = location.pathname === "/"; 
 
   return (
     <>
+      <ScrollToTop />
       {/* Render Navbar only if the route is not '/log' */}
       {!hideNavbar && <Navbar />}
       

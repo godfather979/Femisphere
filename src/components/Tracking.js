@@ -7,7 +7,7 @@ import { BackgroundBeams } from '../ui/background-beams'; // Uncomment if you wa
 function Tracking() {
     return (
         <>
-            <div className="bg-neutral-900 min-h-screen flex flex-col justify-between">
+            <div className="bg-neutral-900 min-h-screen flex flex-col justify-between relative">
 
                 {/* Header Section */}
                 <div className="flex justify-between items-center p-6 bg-neutral-800 shadow-lg rounded-b-lg">
@@ -26,7 +26,7 @@ function Tracking() {
 
                     {/* Main Heading - Centered and Styled */}
                     <div className="flex-grow text-center">
-                        <h1 className="text-5xl font-extrabold text-white bg-gradient-to-r from-yellow-400 to-pink-500 text-transparent bg-clip-text shadow-lg tracking-wide">
+                        <h1 className="text-5xl font-extrabold text-white bg-neutral-800 text-transparent bg-clip-text tracking-wide">
                             Have a{' '}
                             <motion.span
                                 className="text-yellow-400" // Bright yellow color for "Safe Journey"
@@ -49,15 +49,14 @@ function Tracking() {
                 </div>
 
                 {/* Map Section */}
-                <div className="flex-grow flex justify-center items-center py-10">
+                <div className="flex-grow flex justify-center items-center py-10 mb-32">
                     <div className="w-11/12 h-1/2 bg-gray-800 rounded-xl overflow-hidden shadow-2xl p-4 relative">
                         {/* Insert RealTimeRouteMap or RealTimeLocation here */}
                         <RealTimeLocation />
                     </div>
                 </div>
 
-                {/* Footer Section (optional) */}
-                {/* <BackgroundBeams /> */}
+                
 
             </div>
         </>

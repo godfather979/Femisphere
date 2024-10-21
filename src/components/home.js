@@ -1,5 +1,5 @@
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import React, { useEffect } from 'react';
+import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
+import React, { useEffect , useRef } from 'react';
 import myGif from '../images/0001-0240-unscreen.gif';
 import femishepere from '../images/FEMISPHERE.png'; // Import your image here
 
@@ -13,33 +13,33 @@ const Home = () => {
     const roundedWomenServed = useTransform(countWomenServed, latest => Math.round(latest));
     const roundedSupportTraining = useTransform(countSupportTraining, latest => Math.round(latest));
 
-    useEffect(() => {
-        const controls1 = animate(countWomenReached, 579287, { duration: 2 });
-        const controls2 = animate(countWomenServed, 39635, { duration: 2 });
-        const controls3 = animate(countSupportTraining, 35, { duration: 2 });
+    const statsRef = useRef(null);
 
-        return () => {
-            controls1.stop();
-            controls2.stop();
-            controls3.stop();
-        };
-    }, []);
+    // Track if stat cards are in view
+    const isInView = useInView(statsRef, { once: true }); // Trigger only once when in view
+
+    useEffect(() => {
+        if (isInView) {
+            const controls1 = animate(countWomenReached, 579287, { duration: 1.5 });
+            const controls2 = animate(countWomenServed, 39635, { duration: 1.5 });
+            const controls3 = animate(countSupportTraining, 35, { duration: 1.5 });
+
+            // Clean up animation controls when component unmounts
+            return () => {
+                controls1.stop();
+                controls2.stop();
+                controls3.stop();
+            };
+        }
+    }, [isInView]);
 
     return (
         <>
             {/* Main Container */}
-            <div className="min-h-screen bg-gray-900 flex flex-col justify-center items-center p-8 mb-1">
-                <img src={myGif} alt="Description of GIF" />
+            <div className="min-h-screen bg-gray-900 flex flex-col justify-center items-center p-4 mb-1">
+                <img className = "-mt-12 -mb-4"src={myGif} alt="Description of GIF" />
 
-                {/* Video Section */}
-                <motion.div
-                    className="w-full md:w-3/5 h-500 rounded-lg mb-100 overflow-hidden "
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1.5 }}
-                >
-                    {/* Video Content Here */}
-                </motion.div>
+                
 
                 {/* Header Section with Hover Animation and Gradient Text */}
                 <motion.div
@@ -59,7 +59,7 @@ const Home = () => {
 
                 {/* Second Image Section (FEMISHEPERE.png) */}
                 <motion.div
-                    className="w-full md:w-3/5 h-80 rounded-lg shadow-lg mb-8 mt-5"
+                    className="w-full md:w-4/5 h-80 rounded-lg shadow-lg mb-5 mt-3"
                     style={{
                         backgroundImage: `url(${femishepere})`, // Use the imported image
                         backgroundColor: '#2d3748',
@@ -99,7 +99,9 @@ const Home = () => {
                 </motion.div>
 
                 {/* Stats Section */}
-                <motion.div className="flex justify-between mt-10 space-x-8">
+                <motion.div 
+                ref={statsRef}
+                className="flex justify-between mt-10 space-x-8 mb-24">
                     {/* Stat Card 1 */}
                     <motion.div
                         className="bg-gray-700 p-6 rounded-lg shadow-lg text-center"

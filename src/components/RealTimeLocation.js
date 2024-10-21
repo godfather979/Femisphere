@@ -12,7 +12,7 @@ L.Icon.Default.mergeOptions({
 });
 
 const RealTimeLocation = () => {
-  const [position, setPosition] = useState([51.505, -0.09]); // Default position
+  const [position, setPosition] = useState([19.11, 72.86]); // Default position
 
   // Get user's real-time location
   useEffect(() => {
