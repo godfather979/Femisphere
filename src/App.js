@@ -3,13 +3,13 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Hello from './components/Hello';
 import Bye from './components/Bye';
 import WellnessCard from './components/wellness';
-import Job from './components/Job';
 import Tracking from './components/Tracking';
 import Navbar from './components/Navbar';
 import Legal from './components/Legal';
 import Home from './components/home';
 import Loginp from './components/loginp';
 import ScrollToTop from './components/ScrollToTop';
+import Job1 from './components/Job1';
 
 import Ria from './components/Ria'
 
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
+    <BrowserRouter basename="/minithon">
       <RoutesWeb />
     </BrowserRouter>
     </>
@@ -41,7 +41,7 @@ const RoutesWeb = () => {
       
       <Routes>
         <Route path="/wellness" element={<WellnessCard />} />
-        <Route path="/job" element={<Job />} />
+        <Route path="/job" element={<Job1 />} />
         <Route path="/tracking" element={<Tracking />} />
         <Route path="/legal" element={<Legal />} />
         <Route path="/nav" element={<Navbar />} />

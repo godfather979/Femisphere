@@ -1,4 +1,5 @@
 {
+  "homepage": "https://godfather979.github.io/minithon/",
   "name": "base",
   "version": "0.1.0",
   "private": true,
@@ -29,6 +30,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -53,6 +56,7 @@
   },
   "devDependencies": {
     "@types/three": "^0.169.0",
+    "gh-pages": "^6.2.0",
     "tailwindcss": "^3.4.13"
   }
 }

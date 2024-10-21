@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-function Job() {
+function Job1() {
   const [searchTerm, setSearchTerm] = useState('');
   const [jobType, setJobType] = useState('');
 
@@ -48,7 +48,7 @@ function Job() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-wrap justify-center space-x-8 space-y-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {/* Job Cards */}
           {[
@@ -169,7 +169,7 @@ function Job() {
   );
 }
 
-export default Job;
+export default Job1;
 
 
 
