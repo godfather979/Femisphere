@@ -49,7 +49,7 @@ const RoutesWeb = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/Ria" element={<Ria />} />
         <Route path="/" element={<Loginp />} />
-        <Route path="/test" element={<Glober />} />
+        
       </Routes>
     </>
   );
