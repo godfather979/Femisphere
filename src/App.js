@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-    <BrowserRouter basename="/minithon">
+    <BrowserRouter basename="/Femisphere">
       <RoutesWeb />
     </BrowserRouter>
     </>
