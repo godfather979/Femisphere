@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FiHeart, FiCheckCircle, FiCoffee } from 'react-icons/fi';
 import { BsFillBarChartFill } from 'react-icons/bs';
 import { FaRunning, FaAppleAlt, FaWater } from 'react-icons/fa';
+import yoga from "../images/yoga.png"
 
 function WellnessDashboard() {
     return (
@@ -112,7 +113,7 @@ function WellnessDashboard() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 2 }}
                     >
-                        <img src="https://via.placeholder.com/100" alt="Meditation Graphic" className="mx-auto mb-4" />
+                        <img src={yoga} title="Yoga icons created by Freepik - Flaticon" alt="Meditation Graphic" className="mx-auto mb-4 w-24 h-24" />
                         <p>Good vibes, good life</p>
                         <p>Positive thinking | 27 min</p>
                     </motion.div>
