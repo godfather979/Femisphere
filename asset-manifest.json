@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/Femisphere/static/css/main.7e0a7294.css",
-    "main.js": "/Femisphere/static/js/main.d3dc9d6a.js",
+    "main.css": "/Femisphere/static/css/main.5ea3bcac.css",
+    "main.js": "/Femisphere/static/js/main.f6498acf.js",
     "static/js/453.ed57f822.chunk.js": "/Femisphere/static/js/453.ed57f822.chunk.js",
     "static/media/0001-0240-unscreen.gif": "/Femisphere/static/media/0001-0240-unscreen.4bae7c0f2d4340a66c89.gif",
     "static/media/legal.jpg": "/Femisphere/static/media/legal.c348e4c1215676113fe9.jpg",
     "static/media/FEMISPHERE.png": "/Femisphere/static/media/FEMISPHERE.b44e6a37f0aff7eee4c4.png",
     "static/media/Sacramento-Regular.ttf": "/Femisphere/static/media/Sacramento-Regular.5bd7d5208f7a9c18fe22.ttf",
+    "static/media/yoga.png": "/Femisphere/static/media/yoga.cea6be5599d8de7efb39.png",
     "index.html": "/Femisphere/index.html",
-    "main.7e0a7294.css.map": "/Femisphere/static/css/main.7e0a7294.css.map",
-    "main.d3dc9d6a.js.map": "/Femisphere/static/js/main.d3dc9d6a.js.map",
+    "main.5ea3bcac.css.map": "/Femisphere/static/css/main.5ea3bcac.css.map",
+    "main.f6498acf.js.map": "/Femisphere/static/js/main.f6498acf.js.map",
     "453.ed57f822.chunk.js.map": "/Femisphere/static/js/453.ed57f822.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e0a7294.css",
-    "static/js/main.d3dc9d6a.js"
+    "static/css/main.5ea3bcac.css",
+    "static/js/main.f6498acf.js"
   ]
 }
